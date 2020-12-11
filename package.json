@@ -48,10 +48,10 @@
     ],
     "rules": {},
     "parserOptions": {
-      "parser": "babel-eslint",
+      "ecmaVersion": 6,
       "sourceType": "module",
-      "ecmaVersion": {
-        "legacyDecorators": true
+      "ecmaFeatures": {
+        "modules": true
       }
     }
   },
