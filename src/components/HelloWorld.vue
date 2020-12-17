@@ -1,90 +1,77 @@
 <template>
-  <v-container>
-      <v-row class="text-center">
-          <v-col cols="12">
-              <v-img :src="require('../assets/logo.svg')"
-                     class="my-3"
-                     contain
-                     height="200" />
-          </v-col>
+    <v-container>
 
-          <v-col class="mb-4">
-              <h1 class="display-2 font-weight-bold mb-3">
-                  Welcome to Vuetify
-              </h1>
+        <v-row class="text-center">
+            <v-col cols="12">
+                <v-img :src="require('../assets/logo.svg')"
+                       class="my-3"
+                       contain
+                       height="200" />
+            </v-col>
+        </v-row>
+        <v-row class="text-center">
+            <v-col class="mb-5" cols="12">
+                <v-main app dark>
+                    <v-container dark>
+                        <h2>ASW Range Program Manager - Mr Neal Prater</h2>
+                        <hr />
+                        <h2>NAVAL SEA SYSTEMS COMMAND - SEA 05H3</h2>
+                        <v-card>
+                            <v-card-title>{{header}}</v-card-title>
+                            <component :is="currentMainComponent" v-bind="currentMainProperties" v-on="currentMainEvents"> </component>
+                        </v-card>
+                    </v-container>
+                </v-main>
+            </v-col>
+        </v-row>
+        <v-container class="grey lighten-5">
+            <v-row no-gutters>
+                <v-col ></v-col>
+                <v-col v-for="n in 3"
+                       :key="n"
+                       cols="12"
+                       sm="4">
+                    <v-card class="pa-2"
+                            outlined
+                            tile>
+                        One of three columns
+                    </v-card>
+                </v-col>
+            </v-row>
+        </v-container>
 
-              <p class="subheading font-weight-regular">
-                  For help and collaboration with other Vuetify developers,
-                  <br>please join our online
-                  <a href="https://community.vuetifyjs.com"
-                     target="_blank">Discord Community</a>
-              </p>
-          </v-col>
 
-          <v-expansion-panels>
-              <v-expansion-panel v-for="(item,i) in 5"
-                                 :key="i">
-                  <v-expansion-panel-header>
-                      Item
-                  </v-expansion-panel-header>
-                  <v-expansion-panel-content>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </v-expansion-panel-content>
-              </v-expansion-panel>
-          </v-expansion-panels>
 
-          <v-col class="mb-5"
-                 cols="12">
-              <h2 class="headline font-weight-bold mb-3">
-                  What's next? asdasdasd
-              </h2>
+        <!--<v-dialog class="front" v-model="isNoticeRendered" :key="isNoticeRendered" transition="slide-x-transition">
+    <dod-notice @click="isNoticeRendered = false" class="front"> </dod-notice>
+    </v-dialog>-->
+        <!--<v-navigation-drawer app dark>
+        <v-list nav>
+            <v-list-item link v-for="item in navItems" :key="item.id" @click="navItem_onclick(item)">
+                <v-list-item-content>
+                    <v-list-item-title>
+                        {{item.title}}
+                    </v-list-item-title>
+                </v-list-item-content>
+            </v-list-item>
+        </v-list>
+    </v-navigation-drawer>-->
 
-              <v-row justify="center">
-                  <a v-for="(next, i) in whatsNext"
-                     :key="i"
-                     :href="next.href"
-                     class="subheading mx-3"
-                     target="_blank">
-                      {{ next.text }}
-                  </a>
-              </v-row>
-          </v-col>
+        <v-expansion-panels>
+            <v-expansion-panel v-for="(item,i) in 5"
+                               :key="i">
+                
+                <v-expansion-panel-header>
+                    Item
+                </v-expansion-panel-header>
+                <v-expansion-panel-content>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </v-expansion-panel-content>
+            </v-expansion-panel>
+        </v-expansion-panels>
 
-          <v-col class="mb-5"
-                 cols="12">
-              <h2 class="headline font-weight-bold mb-3">
-                  Important Links
-              </h2>
 
-              <v-row justify="center">
-                  <a v-for="(link, i) in importantLinks"
-                     :key="i"
-                     :href="link.href"
-                     class="subheading mx-3"
-                     target="_blank">
-                      {{ link.text }}
-                  </a>
-              </v-row>
-          </v-col>
-
-          <v-col class="mb-5"
-                 cols="12">
-              <h2 class="headline font-weight-bold mb-3">
-                  Ecosystem
-              </h2>
-
-              <v-row justify="center">
-                  <a v-for="(eco, i) in ecosystem"
-                     :key="i"
-                     :href="eco.href"
-                     class="subheading mx-3"
-                     target="_blank">
-                      {{ eco.text }}
-                  </a>
-              </v-row>
-          </v-col>
-      </v-row>
-  </v-container>
+    </v-container>
 </template>
 
 <script lang="ts">
