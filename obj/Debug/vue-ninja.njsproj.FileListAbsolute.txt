@@ -1,2 +1,3 @@
 C:\Users\Charles Nam\source\repos\vue-ninja\vue-ninja\obj\Debug\vue-ninja.njsproj.CoreCompileInputs.cache
 C:\Users\Charles Nam\source\repos\vue-ninja\vue-ninja\bin\Microsoft.NodejsTools.WebRole.dll
+C:\Users\Charles Nam\source\repos\vue-ninja\vue-ninja\obj\Debug\vue-ninja.njsprojAssemblyReference.cache

@@ -119,25 +119,29 @@
 </template>
 
 <script lang="ts">
-  import Vue from 'vue'
-
+    import Vue from 'vue'    
+    import * as DataAccess from '../assets/js/dataAccess'
+    
   export default Vue.extend({
-    name: 'HelloWorld',
+      name: "ssrnm-main",
 
-    data: () => ({
-      ecosystem: [
-        {
-          text: 'vuetify-loader',
-          href: 'https://github.com/vuetifyjs/vuetify-loader',
-        },
-        {
-          text: 'github',
-          href: 'https://github.com/vuetifyjs/vuetify',
-        },
-        {
-          text: 'awesome-vuetify',
-          href: 'https://github.com/vuetifyjs/awesome-vuetify',
-        },
+      data: () => ({
+        //message: `Hello ${mykey.MY_CONST}!`, // Hello Vue.js!
+        search: '',
+        slots: [
+            'body',
+            'body.append',
+            'body.prepend',
+            'footer',
+            'header.data-table-select',
+            'header',
+            'header.<name>',
+            'progress',
+            'item.data-table-select',
+            'item.<name>',
+            'no-data',
+            'no-results',
+            'top'
       ],
       importantLinks: [
         {
@@ -175,6 +179,35 @@
           href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
         },
       ],
-    }),
+      }),
+      props: {
+          files: {
+              type: Array,
+              required: true,
+              default:
+                  function () {
+                      return [];
+                  }
+          }
+      },
+      methods: {
+          deleteItem: function (item: any) {
+              console.log("deleteItem", item);
+              //var self = this;
+              DataAccess.deleteAttachment(item.id)
+                  .then(function (data: any) {
+                      console.log("data", data);
+                      //self.files.splice(self.files.findIndex((x: any) => x.id === item.id), 1);
+                      //self.$toasted.success("Record " + id + " removed");
+                  })
+                  .catch(function (err: any) {
+                      console.log(err);
+                      //self.$toasted.error("Failed to remove record " + id);
+                  });
+          },
+          //row_onclick: function (e) {
+          //    console.log(e, " was clicked");
+          //}
+      },
   })
 </script>

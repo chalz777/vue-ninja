@@ -17,8 +17,8 @@
                         <hr />
                         <h2>NAVAL SEA SYSTEMS COMMAND - SEA 05H3</h2>
                         <v-card>
-                            <v-card-title>{{header}}</v-card-title>
-                            <component :is="currentMainComponent" v-bind="currentMainProperties" v-on="currentMainEvents"> </component>
+                            <!--<v-card-title>{{header}}</v-card-title>
+                            <component :is="currentMainComponent" v-bind="currentMainProperties" v-on="currentMainEvents"> </component>-->
                         </v-card>
                     </v-container>
                 </v-main>

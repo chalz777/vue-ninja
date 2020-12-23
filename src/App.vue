@@ -1,5 +1,5 @@
 <template>
-    <v-app>
+    <v-app-bar app>
         <!--<v-app-bar app
                color="primary"
                dark>
@@ -31,20 +31,21 @@
             <v-row class="text-center">
                 <v-spacer></v-spacer>
                 <span class="black--text">
-                This site contains dynamic content - Highest Possible Classification is SECRET</span>
+                    This site contains dynamic content - Highest Possible Classification is SECRET
+                </span>
             </v-row>
-                <v-spacer></v-spacer>
-                <v-icon>mdi-wifi-strength-4</v-icon>
-                <v-icon>mdi-signal-cellular-outline</v-icon>
-                <v-icon>mdi-battery</v-icon>
-                <span>12:30</span>
+            <v-spacer></v-spacer>
+            <v-icon>mdi-wifi-strength-4</v-icon>
+            <v-icon>mdi-signal-cellular-outline</v-icon>
+            <v-icon>mdi-battery</v-icon>
+            <span>12:30</span>
         </v-system-bar>
-        <v-toolbar app>
+        <v-app-bar app>
 
             <!--<v-col class="mb-5 error" cols="12">
-            This site contains dynamic content - Highest Possible Classification is SECRET
-            </v-col>-->
-        
+    This site contains dynamic content - Highest Possible Classification is SECRET
+    </v-col>-->
+
 
             <v-toolbar-title class="headline text-uppercase">
                 <span>Surface Ship Radiated Noise Measurement</span>
@@ -62,15 +63,15 @@
                 <v-btn>
                     <v-icon>mdi-history</v-icon>
                     <router-link to="/about">About</router-link>
-                </v-btn>               
+                </v-btn>
             </v-toolbar-items>
-        </v-toolbar>
+        </v-app-bar>
 
-        <v-content>
+        <v-main>
             <router-view />
-        </v-content>
+        </v-main>
 
-    </v-app>
+        </v-app-bar>
 </template>
 
 <script lang="ts">
