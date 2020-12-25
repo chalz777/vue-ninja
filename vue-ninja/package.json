@@ -47,7 +47,10 @@
       "eslint:recommended",
       "@vue/typescript/recommended"
     ],
-    "rules": {},
+    "rules": {
+      "camelcase": "off",
+      "@typescript-eslint/camelcase": [ "warn" ]
+    },
     "parserOptions": {
       "ecmaVersion": 6,
       "sourceType": "module",

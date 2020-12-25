@@ -1,6 +1,7 @@
 ﻿import $ from 'jquery'
 
-const root = document.getElementById('drt-base-url').value;
+//////const root = document.getElementById('drt-base-url').value;
+const root = 'http://localhost:8080/'
 
 function getGetRequest(controllerName, id) {
     let url = root + "api/" + controllerName;
@@ -42,6 +43,8 @@ function getDeleteRequest(controllerName, id) {
         contentType: "application/json"
     });
 }
+
+
 
 const DataAccess = {
     deleteRoutedDocument
