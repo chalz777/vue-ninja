@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-container  class="grey lighten-5">
 
         <v-row class="text-center">
             <v-col cols="12">
@@ -9,22 +9,8 @@
                        height="200" />
             </v-col>
         </v-row>
-        <v-row class="text-center">
-            <v-col class="mb-5" cols="12">
-                <v-main app dark>
-                    <v-container dark>
-                        <h2>ASW Range Program Manager - Mr Neal Prater</h2>
-                        <hr />
-                        <h2>NAVAL SEA SYSTEMS COMMAND - SEA 05H3</h2>
-                        <v-card>
-                            <!--<v-card-title>{{header}}</v-card-title>
-                            <component :is="currentMainComponent" v-bind="currentMainProperties" v-on="currentMainEvents"> </component>-->
-                        </v-card>
-                    </v-container>
-                </v-main>
-            </v-col>
-        </v-row>
-        <v-container class="grey lighten-5">
+      
+      
             <v-row no-gutters>
                 <v-col ></v-col>
                 <v-col v-for="n in 3"
@@ -38,29 +24,10 @@
                     </v-card>
                 </v-col>
             </v-row>
-        </v-container>
-
-
-
-        <!--<v-dialog class="front" v-model="isNoticeRendered" :key="isNoticeRendered" transition="slide-x-transition">
-    <dod-notice @click="isNoticeRendered = false" class="front"> </dod-notice>
-    </v-dialog>-->
-        <!--<v-navigation-drawer app dark>
-        <v-list nav>
-            <v-list-item link v-for="item in navItems" :key="item.id" @click="navItem_onclick(item)">
-                <v-list-item-content>
-                    <v-list-item-title>
-                        {{item.title}}
-                    </v-list-item-title>
-                </v-list-item-content>
-            </v-list-item>
-        </v-list>
-    </v-navigation-drawer>-->
+    
 
         <v-expansion-panels>
-            <v-expansion-panel v-for="(item,i) in 5"
-                               :key="i">
-                
+            <v-expansion-panel v-for="(item,i) in 5" :key="i">                
                 <v-expansion-panel-header>
                     Item
                 </v-expansion-panel-header>

@@ -1,20 +1,40 @@
 <template>
-    <v-container>
-        <v-row class="text-center" style="height: 200px;">
-            <v-col cols="12" >
-                <v-spacer />
-            </v-col>
-        </v-row>
+    <!--<v-card height="400"
+            width="256"
+            class="mx-auto">
+        <v-navigation-drawer app dark>
+            <v-list nav>
+                <v-list-item link v-for="item in navItems" :key="item.id" @click="navItem_onclick(item)">
+                    <v-list-item-content>
+                        <v-list-item-title>
+                            {{item.title}}
+                        </v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+            </v-list>
+        </v-navigation-drawer>
+    </v-card>-->
+    
+    
+
+       
+        <!--<v-row class="text-center" style="height: 200px;">
+        <v-col cols="12">
+            <v-spacer />
+        </v-col>
+    </v-row>-->
+
+
 
         <v-row class="text-center">
             <v-col cols="12" class="pa-md-1 my-lg-auto" color="white">
                 <component v-bind:is="component" />
                 <button v-on:click="toggle">Toggle</button>
-                <!--<TrailsTable2 msg="Welcome to Your Vue.js + TypeScript App" />
-    <component :is="currentMainComponent" v-bind="currentMainProperties" v-on="currentMainEvents"> </component>-->
+                <!--<TrailsTable2 msg="Welcome to Your Vue.js + TypeScript App" />-->
+                <!--<component :is="currentMainComponent" v-bind="currentMainProperties" v-on="currentMainEvents"> </component>-->
             </v-col>
         </v-row>
-    </v-container>
+
 </template>
 
 <script lang="ts">
@@ -33,6 +53,17 @@ import { Component, Vue } from 'vue-property-decorator';
             header: "",
             isNoticeRendered: false,
             currentMainComponent: "landing-page",
+              navItems: [{
+                  id: 0,
+                  link: "landing-page",
+                  title: "SSRNM Main"
+                  , header: "ATLANTIC FLEET"
+              }, {
+                  id: 1,
+                  link: "",
+                  title: "ATLANTIC FLEET"
+                  , header: "ATLANTIC FLEET"
+              }]
         }
     },
     methods: {

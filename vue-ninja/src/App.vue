@@ -1,53 +1,41 @@
 <template>
-    <v-app-bar app>
-        <!--<v-app-bar app
-               color="primary"
-               dark>
-        <div class="d-flex align-center">
-            <v-img alt="Vuetify Logo"
-                   class="shrink mr-2"
-                   contain
-                   src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-                   transition="scale-transition"
-                   width="40" />
+  
+    <v-app>
+        <!--<v-navigation-drawer app>
+            nnknknk
+        </v-navigation-drawer>-->
+        <v-navigation-drawer app dark>
+            <v-list nav>
+                <v-list-item link v-for="item in navItems" :key="item.id" @click="navItem_onclick(item)">
+                    <v-list-item-content>
+                        <v-list-item-title>
+                            {{item.title}}
+                        </v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+            </v-list>
+        </v-navigation-drawer>
 
-            <v-img alt="Vuetify Name"
-                   class="shrink mt-1 hidden-sm-and-down"
-                   contain
-                   min-width="100"
-                   src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-                   width="100" />
-        </div>
-
-        <v-spacer></v-spacer>
-        <v-btn href="https://github.com/vuetifyjs/vuetify/releases/latest"
-               target="_blank"
-               text>
-            <span class="mr-2">Latest Release</span>
-            <v-icon>mdi-open-in-new</v-icon>
-        </v-btn>
-    </v-app-bar>-->
-        <v-system-bar class="text-center" color="red " dark>
-            <v-row class="text-center">
-                <v-spacer></v-spacer>
-                <span class="black--text">
-                    This site contains dynamic content - Highest Possible Classification is SECRET
-                </span>
-            </v-row>
-            <v-spacer></v-spacer>
-            <v-icon>mdi-wifi-strength-4</v-icon>
-            <v-icon>mdi-signal-cellular-outline</v-icon>
-            <v-icon>mdi-battery</v-icon>
-            <span>12:30</span>
-        </v-system-bar>
-        <v-app-bar app>
-
-            <!--<v-col class="mb-5 error" cols="12">
+        <!--<v-col class="mb-5 error" cols="12">
     This site contains dynamic content - Highest Possible Classification is SECRET
     </v-col>-->
+        <v-app-bar app>
 
 
             <v-toolbar-title class="headline text-uppercase">
+                <v-system-bar class="text-center" color="red " dark>
+                    <v-row class="text-center">
+                        <v-spacer />
+                        <span class="black--text">
+                            This site contains dynamic content - Highest Possible Classification is SECRET
+                        </span>
+                    </v-row>
+                    <v-spacer></v-spacer>
+                    <v-icon>mdi-wifi-strength-4</v-icon>
+                    <v-icon>mdi-signal-cellular-outline</v-icon>
+                    <v-icon>mdi-battery</v-icon>
+                    <span>12:30</span>
+                </v-system-bar>
                 <span>Surface Ship Radiated Noise Measurement</span>
             </v-toolbar-title>
             <v-spacer></v-spacer>
@@ -65,13 +53,19 @@
                     <router-link to="/about">About</router-link>
                 </v-btn>
             </v-toolbar-items>
-        </v-app-bar>
 
+
+        </v-app-bar>
         <v-main>
-            <router-view />
+            <v-container fluid>
+                <router-view />
+            </v-container>
         </v-main>
+        <v-footer app>
+            <!-- -->
+        </v-footer>
 
-        </v-app-bar>
+    </v-app>
 </template>
 
 <script lang="ts">
