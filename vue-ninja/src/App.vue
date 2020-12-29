@@ -58,7 +58,7 @@
                 </v-btn>
                 <v-btn>
                     <v-icon>mdi-history</v-icon>
-                    <router-link to="/home2">Pacific fleet</router-link>
+                    <router-link to="/ssrnm">SSRNM Main</router-link>
                 </v-btn>
                 <v-btn>
                     <v-icon>mdi-history</v-icon>

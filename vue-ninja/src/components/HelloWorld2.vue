@@ -5,7 +5,7 @@
               <v-img :src="require('../assets/logo.svg')"
                      class="my-3"
                      contain
-                     height="200" />
+                     height="100" />
              
           </v-col>
 
@@ -59,8 +59,8 @@
                   <hr />
                   <h2>NAVAL SEA SYSTEMS COMMAND - SEA 05H3</h2>
                   <v-card>
-                      <!--<v-card-title>{{header}}</v-card-title>-->
-                      <!--<component :is="currentMainComponent" v-bind="currentMainProperties" v-on="currentMainEvents"> </component>-->
+                      <v-card-title>{{header}}</v-card-title>
+                      <!--shoud be in the view<component :is="currentMainComponent" v-bind="currentMainProperties" v-on="currentMainEvents"> </component>-->
                   </v-card>
               </v-container>
           </v-main>
@@ -89,7 +89,7 @@
       },
       data: function () {
           return {
-              //header: "",
+              header: "",
               //isNoticeRendered: false,
               //currentMainComponent: "landing-page",
               //navItems: [{

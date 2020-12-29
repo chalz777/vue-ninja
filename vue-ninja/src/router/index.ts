@@ -12,9 +12,9 @@ const routes: Array<RouteConfig> = [
     component: Home
   },
   {
-    path: '/home2',
-    name: 'Home2',      
-    component: () => import(/* webpackChunkName: "about" */ '../views/Home2.vue')
+    path: '/ssrnm',
+      name: 'SsrnmMain',      
+      component: () => import(/* webpackChunkName: "about" */ '../views/SsrnmMain.vue')
   },
   {
     path: '/about',

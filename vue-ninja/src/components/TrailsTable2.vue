@@ -1,4 +1,41 @@
 <template>
+
+    <v-container>
+        <v-row class="text-center">
+            <v-col cols="12" class="pa-md-4 my-lg-auto" color="white">
+
+                <v-card >
+                    <v-card-title>
+                        Trial2 Reports
+                        <v-spacer />
+                        <v-text-field v-model="search"
+                                      label="Search"
+                                      class="list-search"
+                                      single-line
+                                      hide-details />
+                    </v-card-title>
+
+                    <v-data-table :headers="headers"
+                                  :items="itemsDisplay"
+                                  :search="search"
+                                  item-key="id"
+                                  class="route-list-table">
+
+                        <template v-slot:body="{ items }">
+                            <tbody>
+                                <tr class="pointer" :class="item.rowClass" v-for="item in items" :key="item.id">
+                                    <td class="ship">{{ item.ship }}</td>
+                                    <td class="date">{{ item.date }}</td>
+                                    <td class="site">{{ item.site }}</td>
+                                    <td class="comments">{{ item.comments }}</td>
+                                </tr>
+                            </tbody>
+                        </template>
+                    </v-data-table>
+                </v-card>
+            </v-col>
+        </v-row>
+    </v-container>
 </template>
 
 <script lang="ts">
@@ -59,7 +96,7 @@
         },
         computed: {
             root: function () {
-                return (<HTMLInputElement>document.getElementById('App-base-url')).value;                
+                return null;// (<HTMLInputElement>document.getElementById('App-base-url')).value;                
             },
             headers: function () {
                 return [{
@@ -85,49 +122,51 @@
                 ];
             },
             itemsDisplay: function () {
-                var self = this;
-                if (self.items.sort) {
-                    return self.items.sort((a: any, b: any) => {
-                        return a - b;
-                    });
-                } else {
-                    return [];
-                }
+                ////var self = this;
+                //if (this.items.sort) {
+                //    return self.items.sort((a: any, b: any) => {
+                //        return a - b;
+                //    });
+                //} else {
+                //    return [];
+                //}
+                return [];
             }
         },
         mounted: function () {
+            return [];
         },
-        template: `
-				<v-card>
-					<v-card-title>
-                    Trial Reports
-						<v-spacer/>
-						<v-text-field v-model="search"
-                        label="Search"
-                        class="list-search"
-                        single-line
-                        hide-details/>
-					</v-card-title>
+ //       template: `
+	//			<v-card>
+	//				<v-card-title>
+ //                   Trial Reports
+	//					<v-spacer/>
+	//					<v-text-field v-model="search"
+ //                       label="Search"
+ //                       class="list-search"
+ //                       single-line
+ //                       hide-details/>
+	//				</v-card-title>
 
-					<v-data-table  :headers="headers"
-                              :items="itemsDisplay"
-                              :search="search"
-                              item-key="id"
-                              class="route-list-table">
+	//				<v-data-table  :headers="headers"
+ //                             :items="itemsDisplay"
+ //                             :search="search"
+ //                             item-key="id"
+ //                             class="route-list-table">
 
-						<template v-slot:body="{ items }">
-							<tbody>
-								<tr  class="pointer" :class="item.rowClass" v-for="item in items" :key="item.id">
-									<td class="ship">{{ item.ship }}</td>
-									<td class="date">{{ item.date }}</td>
-									<td class="site">{{ item.site }}</td>
-									<td class="comments">{{ item.comments }}</td>
-								</tr>
-							</tbody>
-						</template>
-					</v-data-table>
-				</v-card>
-	`
+	//					<template v-slot:body="{ items }">
+	//						<tbody>
+	//							<tr  class="pointer" :class="item.rowClass" v-for="item in items" :key="item.id">
+	//								<td class="ship">{{ item.ship }}</td>
+	//								<td class="date">{{ item.date }}</td>
+	//								<td class="site">{{ item.site }}</td>
+	//								<td class="comments">{{ item.comments }}</td>
+	//							</tr>
+	//						</tbody>
+	//					</template>
+	//				</v-data-table>
+	//			</v-card>
+	//`
     
     })
 
