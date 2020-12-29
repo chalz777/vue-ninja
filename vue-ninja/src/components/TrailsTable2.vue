@@ -1,5 +1,4 @@
 <template>
-
     <v-container>
         <v-row class="text-center">
             <v-col cols="12" class="pa-md-4 my-lg-auto" color="white">
@@ -21,7 +20,7 @@
                                   item-key="id"
                                   class="route-list-table">
 
-                        <template v-slot:body="{ items }">
+                        <!--<template v-slot:body="{ items }">
                             <tbody>
                                 <tr class="pointer" :class="item.rowClass" v-for="item in items" :key="item.id">
                                     <td class="ship">{{ item.ship }}</td>
@@ -30,7 +29,7 @@
                                     <td class="comments">{{ item.comments }}</td>
                                 </tr>
                             </tbody>
-                        </template>
+                        </template>-->
                     </v-data-table>
                 </v-card>
             </v-col>
@@ -92,7 +91,8 @@
              */
             row_onclick: function (e) {
                 console.log(e, " was clicked");
-            }
+            },
+          
         },
         computed: {
             root: function () {
@@ -136,37 +136,7 @@
         mounted: function () {
             return [];
         },
- //       template: `
-	//			<v-card>
-	//				<v-card-title>
- //                   Trial Reports
-	//					<v-spacer/>
-	//					<v-text-field v-model="search"
- //                       label="Search"
- //                       class="list-search"
- //                       single-line
- //                       hide-details/>
-	//				</v-card-title>
 
-	//				<v-data-table  :headers="headers"
- //                             :items="itemsDisplay"
- //                             :search="search"
- //                             item-key="id"
- //                             class="route-list-table">
-
-	//					<template v-slot:body="{ items }">
-	//						<tbody>
-	//							<tr  class="pointer" :class="item.rowClass" v-for="item in items" :key="item.id">
-	//								<td class="ship">{{ item.ship }}</td>
-	//								<td class="date">{{ item.date }}</td>
-	//								<td class="site">{{ item.site }}</td>
-	//								<td class="comments">{{ item.comments }}</td>
-	//							</tr>
-	//						</tbody>
-	//					</template>
-	//				</v-data-table>
-	//			</v-card>
-	//`
     
     })
 
@@ -367,61 +337,7 @@
           });
       }
 
-      //data: () => ({
-      //  //message: `Hello ${mykey.MY_CONST}!`, // Hello Vue.js!
-      //  search: '',
-      //  slots: [
-      //      'body',
-      //      'body.append',
-      //      'body.prepend',
-      //      'footer',
-      //      'header.data-table-select',
-      //      'header',
-      //      'header.<name>',
-      //      'progress',
-      //      'item.data-table-select',
-      //      'item.<name>',
-      //      'no-data',
-      //      'no-results',
-      //      'top'
-      //],
-      //importantLinks: [
-      //  {
-      //    text: 'Documentation',
-      //    href: 'https://vuetifyjs.com',
-      //  },
-      //  {
-      //    text: 'Chat',
-      //    href: 'https://community.vuetifyjs.com',
-      //  },
-      //  {
-      //    text: 'Made with Vuetify',
-      //    href: 'https://madewithvuejs.com/vuetify',
-      //  },
-      //  {
-      //    text: 'Twitter',
-      //    href: 'https://twitter.com/vuetifyjs',
-      //  },
-      //  {
-      //    text: 'Articles',
-      //    href: 'https://medium.com/vuetify',
-      //  },
-      //],
-      //whatsNext: [
-      //  {
-      //    text: 'Explore components',
-      //    href: 'https://vuetifyjs.com/components/api-explorer',
-      //  },
-      //  {
-      //    text: 'Select a layout',
-      //    href: 'https://vuetifyjs.com/getting-started/pre-made-layouts',
-      //  },
-      //  {
-      //    text: 'Frequently Asked Questions',
-      //    href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
-      //  },
-      //],
-      //}),
+     
       //props: {
       //    files: {
       //        type: Array,
