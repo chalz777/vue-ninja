@@ -40,19 +40,23 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+    import { Component, Vue } from 'vue-property-decorator';
+    import LandingPage from '@/components/LandingPage.vue'; 
     import TrailsTable from '@/components/TrailsTable.vue'; // @ is an alias to /src
-    import TrailsTable2 from '@/components/TrailsTable2.vue'; // @ is an alias to /src
+    import TrailsTable2 from '@/components/TrailsTable2.vue'; 
+    import AswTable from '@/components/AswTable.vue'; 
 
     @Component({
         components: {
+            LandingPage,
             TrailsTable,
-            TrailsTable2
+            TrailsTable2,
+            AswTable,
         },
         props: ['parentComponent'],       
         data: function () {
             return {
-                component: "TrailsTable",
+                component: LandingPage,
                 header: "",
                 isNoticeRendered: false,
                 currentMainComponent: "landing-page",
@@ -63,10 +67,14 @@ import { Component, Vue } from 'vue-property-decorator';
         changeComp(link) {
             //alert("parentmessage has changed: " + link);
             //if ((this as any).component === TrailsTable) {
-            if (link == "trials-table") {
+            if (link == "landing-page") {
+                (this as any).component = LandingPage;
+            } else if (link == "trials-table") {
                 (this as any).component = TrailsTable2;
+            } else if (link == "asw-table") {
+                (this as any).component = AswTable;
             } else {
-                (this as any).component = TrailsTable;
+                (this as any).component = LandingPage;
             }
             
         },

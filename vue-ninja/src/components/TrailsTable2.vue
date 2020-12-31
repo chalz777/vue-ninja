@@ -1,40 +1,33 @@
 <template>
-    <v-container>
-        <v-row class="text-center">
-            <v-col cols="12" class="pa-md-4 my-lg-auto" color="white">
+        <v-card >
+            <v-card-title>
+                Trial2 Reports
+                <v-spacer />
+                <v-text-field v-model="search"
+                                label="Search"
+                                class="list-search"
+                                single-line
+                                hide-details />
+            </v-card-title>
 
-                <v-card >
-                    <v-card-title>
-                        Trial2 Reports
-                        <v-spacer />
-                        <v-text-field v-model="search"
-                                      label="Search"
-                                      class="list-search"
-                                      single-line
-                                      hide-details />
-                    </v-card-title>
+            <v-data-table :headers="headers"
+                            :items="itemsDisplay"
+                            :search="search"
+                            item-key="id"
+                            class="route-list-table">
 
-                    <v-data-table :headers="headers"
-                                  :items="itemsDisplay"
-                                  :search="search"
-                                  item-key="id"
-                                  class="route-list-table">
-
-                        <!--<template v-slot:body="{ items }">
-                            <tbody>
-                                <tr class="pointer" :class="item.rowClass" v-for="item in items" :key="item.id">
-                                    <td class="ship">{{ item.ship }}</td>
-                                    <td class="date">{{ item.date }}</td>
-                                    <td class="site">{{ item.site }}</td>
-                                    <td class="comments">{{ item.comments }}</td>
-                                </tr>
-                            </tbody>
-                        </template>-->
-                    </v-data-table>
-                </v-card>
-            </v-col>
-        </v-row>
-    </v-container>
+                <!--<template v-slot:body="{ items }">
+                    <tbody>
+                        <tr class="pointer" :class="item.rowClass" v-for="item in items" :key="item.id">
+                            <td class="ship">{{ item.ship }}</td>
+                            <td class="date">{{ item.date }}</td>
+                            <td class="site">{{ item.site }}</td>
+                            <td class="comments">{{ item.comments }}</td>
+                        </tr>
+                    </tbody>
+                </template>-->
+            </v-data-table>
+        </v-card>
 </template>
 
 <script lang="ts">
@@ -60,19 +53,20 @@
                     'no-data',
                     'no-results',
                     'top'
-                ]
+                ],
+                items: [],
             }
         },
-        props: {
-            items: {
-                type: Array,
-                required: true,
-                default:
-                    function () {
-                        return [];
-                    }
-            }
-        },
+        //props: {
+        //    items: {
+        //        type: Array,
+        //        required: true,
+        //        default:
+        //            function () {
+        //                return [];
+        //            }
+        //    }
+        //},
         methods: {
             /* 		deleteItem: function (item) {
             console.log("deleteItem", item);
@@ -122,15 +116,15 @@
                 ];
             },
             itemsDisplay: function () {
-                ////var self = this;
-                //if (this.items.sort) {
-                //    return self.items.sort((a: any, b: any) => {
-                //        return a - b;
-                //    });
-                //} else {
-                //    return [];
-                //}
-                return [];
+                const self = (this as any);
+                if (self.items.sort) {
+                    return self.items.sort((a: any, b: any) => {
+                        return a - b;
+                    });
+                } else {
+                    return [];
+                }
+               
             }
         },
         mounted: function () {

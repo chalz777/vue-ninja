@@ -20,6 +20,9 @@
                     <v-list-item link v-for="item in navItems" :key="item.id" @click="navItem_onclick(item)">
                         <v-list-item-content>
                             <v-list-item-title>
+                                
+                                    <v-icon v-text="item.icon" :size="item.isize"></v-icon>
+                              
                                 {{item.title}}
                             </v-list-item-title>
                         </v-list-item-content>
@@ -33,15 +36,15 @@
                 <v-spacer></v-spacer>
                 <v-toolbar-items class="hidden-sm-and-down">
                     <v-btn>
-                        <v-icon>mdi-antenna</v-icon>
-                        <router-link to="/">Atlantic Fleet</router-link>
-                    </v-btn>
-                    <v-btn>
-                        <v-icon>mdi-history</v-icon>
+                        <v-icon>mdi-home</v-icon>
                         <router-link to="/ssrnm">SSRNM Main</router-link>
                     </v-btn>
                     <v-btn>
-                        <v-icon>mdi-plus</v-icon>
+                        <v-icon>mdi-ship-wheel</v-icon>
+                        <router-link to="/">Atlantic Fleet</router-link>
+                    </v-btn>
+                    <v-btn>
+                        <v-icon>mdi-head-question</v-icon>
                         <router-link to="/about">About</router-link>
                     </v-btn>
                 </v-toolbar-items>
@@ -76,19 +79,32 @@ export default Vue.extend({
         navItems: [{
             id: 0,
             link: "landing-page",
+            icon: "mdi-home",
+            isize: "22",
             title: "SSRNM Main"
             , header: "ATLANTIC FLEET"
         }, {
             id: 1,
-            link: "",
+                link: "",
+                icon: "mdi-ship-wheel",
+                isize: "22",
             title: "ATLANTIC FLEET"
             , header: "ATLANTIC FLEET"
         }, {
             id: 2,
-            link: "trials-table",
+                link: "trials-table",
+                icon: "mdi-sail-boat",
+                isize: "17",
             title: " - TRIAL HISTORY"
             , header: "ATLANTIC FLEET"
-        }
+        }, {
+                id: 3,
+                link: "asw-table",
+                icon: "mdi-sunglasses",
+                isize: "17",
+                title: " - ASW OVERVIEW"
+                , header: "ATLANTIC FLEET"
+        },
         ],
         currItem: '',
     }),

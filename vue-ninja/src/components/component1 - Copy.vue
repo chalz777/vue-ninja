@@ -3,7 +3,13 @@
 </template>
 
 <script lang="ts">
-</script>
 
+    import Vue from 'vue'
+    import * as DataAccess from '../assets/js/dataAccess'
+    export default Vue.extend({
+
+    })
+
+</script>
 <style scoped>
 </style>
