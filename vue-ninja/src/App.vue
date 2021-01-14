@@ -71,9 +71,8 @@
 export default Vue.extend({
 
   name: 'App',
-
   components: {
-      SsrnmMain
+      SsrnmMain,     
     },
     data: () => ({
         navItems: [{
@@ -105,6 +104,21 @@ export default Vue.extend({
                 title: " - ASW OVERVIEW"
                 , header: "ATLANTIC FLEET"
         },
+          //      ,{
+        //        id: 4,
+        //        link: "valert-snack",
+        //        icon: "mdi-ship-wheel",
+        //        isize: "17",
+        //        title: " - valert snack"
+        //        , header: "valert snack FLEET"            
+        //},{
+        //        id: 5,
+        //        link: "reuse-tabs",
+        //        icon: "mdi-airplane",
+        //        isize: "22",
+        //        title: " - reuse-tabs"
+        //        , header: "reuse-tabs FLEET"
+        // },
         ],
         currItem: '',
     }),

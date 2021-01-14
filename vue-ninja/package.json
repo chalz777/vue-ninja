@@ -13,10 +13,12 @@
     "babel-eslint": "^10.1.0",
     "core-js": "^3.6.5",
     "jquery": "^3.5.1",
+    "moment": "^2.29.1",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^8.4.2",
     "vue-router": "^3.2.0",
+    "vue-toastify": "^1.8.0",
     "vuetify": "^2.2.11"
   },
   "devDependencies": {
@@ -49,7 +51,10 @@
     ],
     "rules": {
       "camelcase": "off",
-      "@typescript-eslint/camelcase": [ "warn" ]
+      "no-mixed-spaces-and-tabs": 0,
+      "@typescript-eslint/camelcase": [
+        "warn"
+      ]
     },
     "parserOptions": {
       "ecmaVersion": 6,

@@ -14,7 +14,7 @@
             <p>
                 <a href="content/section508.html" target="_blank"> Accessibility/Section 508</a>
             </p>
-            <trial-reports-table :reports="reports" />
+            <!--<trial-reports-table :reports="reports" />-->
         </v-container>
     </v-card>
 </template>

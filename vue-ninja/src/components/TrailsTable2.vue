@@ -1,44 +1,55 @@
 <template>
-        <v-card >
-            <v-card-title>
-                Trial2 Reports
-                <v-spacer />
-                <v-text-field v-model="search"
-                                label="Search"
-                                class="list-search"
-                                single-line
-                                hide-details />
-            </v-card-title>
+    <v-card>
+        <v-card-title>
 
-            <v-data-table :headers="headers"
-                            :items="itemsDisplay"
-                            :search="search"
-                            item-key="id"
-                            class="route-list-table">
+            Trial2 Reports
+            <v-spacer />
 
-                <!--<template v-slot:body="{ items }">
-                    <tbody>
-                        <tr class="pointer" :class="item.rowClass" v-for="item in items" :key="item.id">
-                            <td class="ship">{{ item.ship }}</td>
-                            <td class="date">{{ item.date }}</td>
-                            <td class="site">{{ item.site }}</td>
-                            <td class="comments">{{ item.comments }}</td>
-                        </tr>
-                    </tbody>
-                </template>-->
-            </v-data-table>
-        </v-card>
+            <v-text-field v-model="search"
+                          label="Search"
+                          class="list-search"
+                          append-icon="mdi-magnify"
+                          single-line
+                          hide-details />
+        </v-card-title>
+
+        <v-data-table :headers="headers"
+                      :items="itemsDisplay"
+                      :search="search"
+                      item-key="id"
+                      class="elevation-1"
+                      @click:row="row_onClick">
+
+            <template v-slot:slot:default>
+                <tbody>
+                    <tr class="pointer" :class="item.rowClass" v-for="item in items" :key="item.id">
+                        <td class="ship">{{ item.ship }}</td>
+                        <td class="date">{{ item.date  }}</td>
+                        <td class="site">{{ item.site }}</td>
+                        <td class="comments">{{ item.comments }}</td>
+                    </tr>
+                </tbody>
+            </template>
+        </v-data-table>
+        <ValertSnack />
+
+    </v-card>
 </template>
 
 <script lang="ts">
     import Vue from 'vue'
+    import ValertSnack from '@/components/ValertSnack.vue'; 
     import * as DataAccess from '../assets/js/dataAccess'
+
     export default Vue.extend({        
         name: "trials-table",
+        components: {
+            ValertSnack,
+        },
         data() {
             return {
-
                 search: '',
+                yourDateString: '2018-12-24 04:19:23',
                 slots: [
                     'body',
                     'body.append',
@@ -57,34 +68,61 @@
                 items: [],
             }
         },
-        //props: {
-        //    items: {
-        //        type: Array,
-        //        required: true,
-        //        default:
-        //            function () {
-        //                return [];
-        //            }
-        //    }
-        //},
-        methods: {
-            /* 		deleteItem: function (item) {
-            console.log("deleteItem", item);
-            var self = this;
-            DataAccess.deleteAttachment(item.id)
-            .then(function (data) {
-            console.log("data", data);
-            self.files.splice(self.files.findIndex(x => x.id === item.id), 1);
-            //self.$toasted.success("Record " + id + " removed");
-            })
-            .catch(function (err) {
-            console.log(err);
-            //self.$toasted.error("Failed to remove record " + id);
-            });
+     
+        methods: {         
+            getReports: function () {
+                return [
+                    {
+                        id: 1
+                        , ship: "ship1"                      
+                        , date: this.dateFormat(new Date(0))
+                        , site: "site1"
+                        , comments: "comments1"
+                    },
+                    {
+                        id: 2
+                        , ship: "ship2"
+                        , date: this.dateFormat(new Date(0))
+                        , site: "site2"
+                        , comments: "comments2"
+                    },
+                    {
+                        id: 3
+                        , ship: "ship3"
+                        , date: this.dateFormat(new Date(0))
+                        , site: "site3"
+                        , comments: "comments3"
+                    },                   
+                    {
+                        id: 4
+                        , ship: "ship4"
+                        , date: this.dateFormat(new Date(0))
+                        , site: "site4"
+                        , comments: "comments4"
+                    },
+                    {
+                        id: 5
+                        , ship: "ship5"
+                        , date: this.dateFormat(new Date(0))
+                        , site: "site5"
+                        , comments: "comments5"
+                    },
+                ];
             },
-             */
-            row_onclick: function (e) {
+            dateFormat: function (e){
+                   return new Intl.DateTimeFormat('en-US', {
+                        year: 'numeric',
+                        month: 'numeric',
+                        day: 'numeric',
+                        hour: 'numeric',
+                        minute: 'numeric',
+                        second: 'numeric',
+                        }).format(e);
+            },
+
+            row_onClick: function (e) {
                 console.log(e, " was clicked");
+                (this as any).$vToastify.success("easy-peasy");
             },
           
         },
@@ -128,7 +166,7 @@
             }
         },
         mounted: function () {
-            return [];
+            (this as any).items = this.getReports();
         },
 
     

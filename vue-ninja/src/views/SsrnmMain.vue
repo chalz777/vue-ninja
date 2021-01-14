@@ -46,6 +46,7 @@
     import TrailsTable2 from '@/components/TrailsTable2.vue'; 
     import AswTable from '@/components/AswTable.vue'; 
 
+
     @Component({
         components: {
             LandingPage,
@@ -72,7 +73,7 @@
             } else if (link == "trials-table") {
                 (this as any).component = TrailsTable2;
             } else if (link == "asw-table") {
-                (this as any).component = AswTable;
+                (this as any).component = AswTable;         
             } else {
                 (this as any).component = LandingPage;
             }
