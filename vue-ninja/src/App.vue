@@ -93,25 +93,68 @@ export default Vue.extend({
             id: 2,
                 link: "trials-table",
                 icon: "mdi-sail-boat",
-                isize: "17",
+                isize: "19",
             title: " - TRIAL HISTORY"
             , header: "ATLANTIC FLEET"
         }, {
                 id: 3,
                 link: "asw-table",
-                icon: "mdi-sunglasses",
-                isize: "17",
+                icon: "mdi-google-analytics",
+                isize: "19",
                 title: " - ASW OVERVIEW"
                 , header: "ATLANTIC FLEET"
+        },{
+                id: 4,
+                link: "non-asw-table",
+                icon: "mdi-google-circles-extended",
+                isize: "19",
+                title: " - NON ASW OVERVIEW"
+                , header: "NON ATLANTIC FLEET"
+            
+        }, {
+                id: 5,
+                link: "search-form",
+                icon: "mdi-google-circles",
+                isize: "19",
+                title: " - SEARCH"
+                , header: "SEARCH"
+        }, {
+                id: 6,
+                link: "reports-list",
+                icon: "mdi-view-headline",
+                isize: "19",
+                title: " - REPORTS LIST"
+                , header: "REPORTS LIST"
+        }, {
+                id: 7,
+                link: "last-15-trials",
+                icon: "mdi-view-sequential",
+                isize: "19",
+                title: " - LAST 15 TRIALS"
+                , header: "LAST 15 TRIALS"
+        }, {
+                id: 8,
+                link: "contacts",
+                icon: "mdi-arrow-up-bold-hexagon-outline",
+                isize: "19",
+                title: " - CONTACTS"
+                , header: "CONTACTS"
+        }, {
+                id: 9,
+                link: "coming-soon",
+                icon: "mdi-google-play",
+                isize: "19",
+                title: " - COMING SOON"
+                , header: "COMING SOON"
+        }, {
+                id: 10,
+                link: "dod-notice",
+                icon: "mdi-google-hangouts",
+                isize: "19",
+                title: " - DOD NOTICE"
+                , header: "DOD NOTICE"
         },
-          //      ,{
-        //        id: 4,
-        //        link: "valert-snack",
-        //        icon: "mdi-ship-wheel",
-        //        isize: "17",
-        //        title: " - valert snack"
-        //        , header: "valert snack FLEET"            
-        //},{
+            //{
         //        id: 5,
         //        link: "reuse-tabs",
         //        icon: "mdi-airplane",

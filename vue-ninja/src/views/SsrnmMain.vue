@@ -45,6 +45,13 @@
     import TrailsTable from '@/components/TrailsTable.vue'; // @ is an alias to /src
     import TrailsTable2 from '@/components/TrailsTable2.vue'; 
     import AswTable from '@/components/AswTable.vue'; 
+    import NonAswTable from '@/components/NonAswTable.vue';
+    import ReportsList from '@/components/ReportsList.vue'; 
+    import Last15Trial from '@/components/Last15Trial.vue';
+    import SearchForm from '@/components/SearchForm.vue'; 
+    import Contacts from '@/components/Contacts.vue';    
+    import ComingSoon from '@/components/ComingSoon.vue';
+    import DodNotice from '@/components/DodNotice.vue'; 
 
 
     @Component({
@@ -53,6 +60,13 @@
             TrailsTable,
             TrailsTable2,
             AswTable,
+            NonAswTable,
+            ReportsList,
+            Last15Trial,
+            SearchForm,
+            Contacts,
+            ComingSoon,
+            DodNotice,
         },
         props: ['parentComponent'],       
         data: function () {
@@ -73,11 +87,25 @@
             } else if (link == "trials-table") {
                 (this as any).component = TrailsTable2;
             } else if (link == "asw-table") {
-                (this as any).component = AswTable;         
+                (this as any).component = AswTable;    
+            } else if (link == "non-asw-table") {
+                (this as any).component = NonAswTable;
+            } else if (link == "reports-list") {
+                (this as any).component = ReportsList;
+            } else if (link == "last-15-trials") {
+                (this as any).component = Last15Trial;
+            } else if (link == "search-form") {
+                (this as any).component = SearchForm; 
+            } else if (link == "contacts") {
+                (this as any).component = Contacts;
+            } else if (link == "coming-soon") {
+                (this as any).component = ComingSoon; 
+            } else if (link == "dod-notice") {
+                (this as any).component = DodNotice; 
             } else {
                 (this as any).component = LandingPage;
             }
-            
+           
         },
     },
     watch: {
