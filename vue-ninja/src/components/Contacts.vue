@@ -6,27 +6,49 @@
         </v-card-title>
 
         <v-container>
-            <div class="flex">
-                <div class="margin-sm">
-                    <div>SSRNM Programmatic Contact</div>
-                    <div>Neal Prater</div>
-                    <div>NAVSEA ASW Range Program Manager</div>
-                    <div>(SEA05E18)</div>
-                    <div>360-315-3413</div>
-                    <div>neal.prater@navy.mil</div>
-                </div>
+            <v-row class="text-center">
+                <v-col cols="1">
+                    <v-spacer />
+                </v-col>
+                <v-col cols="4">
+                    <v-card elevation="8" outlined shaped>
+                        <v-card-title>
+                            SSRNM Programmatic Contact
+                        </v-card-title>
+                        <v-divider class="mx-4"></v-divider>                       
 
-                <div class="margin-sm">
-                    <div>Technical/WebSite Contact</div>
-                    <div>NUWC Keyport Code 1042</div>
-                    <div>610 Dowell Street</div>
-                    <div>Keyport, WA 98345</div>
-                    <div>Voice: 360-315-7840</div>
-                    <div>james.gooder@navy.smil.mil</div>
-                    <div>james.gooder@navy.mil</div>
-                </div>
-            </div>
-        </v-container>
+                        <v-card-text>
+                            <div>Neal Prater</div>
+                            <div>NAVSEA ASW Range Program Manager</div>
+                            <div>(SEA05E18)</div>
+                            <div>360-315-3413</div>
+                            <div>neal.prater@navy.mil</div>
+                        </v-card-text>  
+                    </v-card>
+                </v-col>
+                <v-col cols="1">
+                    <v-spacer />
+                </v-col>
+
+                <v-col cols="4" color="white">
+                    <v-card elevation="8" outlined shaped>
+                        <v-card-title>
+                            Technical/WebSite Contact
+                        </v-card-title>
+                        <v-divider class="mx-4"></v-divider>
+                        <v-card-text>
+                            <div>NUWC Keyport Code 1042</div>
+                            <div>610 Dowell Street</div>
+                            <div>Keyport, WA 98345</div>
+
+                            <div>Voice: 360-315-7840</div>
+                            <div>james.gooder@navy.smil.mil</div>
+                            <div>james.gooder@navy.mil</div>
+                        </v-card-text>
+                    </v-card>                   
+                </v-col>
+            </v-row>
+</v-container>
     </v-card>
   
 </template>

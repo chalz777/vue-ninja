@@ -128,7 +128,7 @@ export default Vue.extend({
         }, {
                 id: 7,
                 link: "last-15-trials",
-                icon: "mdi-view-sequential",
+                icon: "mdi-google-lens",
                 isize: "19",
                 title: " - LAST 15 TRIALS"
                 , header: "LAST 15 TRIALS"

@@ -17,7 +17,7 @@
                       item-key="id"
                       class="route-list-table">
 
-            <template v-slot:body="{ items }">
+            <template v-slot:slot:default>
                 <tbody>
                     <tr class="pointer" :class="item.rowClass" v-for="item in items" :key="item.id">
                         <td class="ship">{{ item.ship }}</td>
@@ -84,46 +84,46 @@
                 return [
                     {
                         id: 1
-                        , hull: "hull1"
-                        , status: "status1"
                         , ship: "ship1"
-                        , months: "months1"
+                        , hull: "hull1"
+                        , years: "years1"
+                        , message: "message1"
                         , reportDate: this.dateFormat(new Date(0))
                         , reportName: "name1"
                     },
                     {
                         id: 2
-                        , hull: "hull2"
-                        , status: "status2"
                         , ship: "ship2"
-                        , months: "months2"
+                        , hull: "hull2"
+                        , years: "years2"
+                        , message: "message2"
                         , reportDate: this.dateFormat(new Date(0))
                         , reportName: "name2"
                     },
                     {
                         id: 3
-                        , hull: "hull3"
-                        , status: "status3"
                         , ship: "ship3"
-                        , months: "months3"
+                        , hull: "hull3"
+                        , years: "years3"
+                        , message: "message3"
                         , reportDate: this.dateFormat(new Date(0))
                         , reportName: "name3"
                     },
                     {
                         id: 4
-                        , hull: "hull4"
-                        , status: "status4"
                         , ship: "ship4"
-                        , months: "months4"
+                        , hull: "hull4"
+                        , years: "years4"
+                        , message: "message4"
                         , reportDate: this.dateFormat(new Date(0))
                         , reportName: "name4"
                     },
                     {
                         id: 5
-                        , hull: "hull5"
-                        , status: "status5"
                         , ship: "ship5"
-                        , months: "months5"
+                        , hull: "hull5"
+                        , years: "years5"
+                        , message: "message5"
                         , reportDate: this.dateFormat(new Date(0))
                         , reportName: "name5"
                     }
