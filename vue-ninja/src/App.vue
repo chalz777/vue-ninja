@@ -20,9 +20,7 @@
                     <v-list-item link v-for="item in navItems" :key="item.id" @click="navItem_onclick(item)">
                         <v-list-item-content>
                             <v-list-item-title>
-                                
-                                    <v-icon v-text="item.icon" :size="item.isize"></v-icon>
-                              
+                                <i class="material-icons" :style="{'font-size':item.isize + 'px'}">{{item.icon}}</i>        
                                 {{item.title}}
                             </v-list-item-title>
                         </v-list-item-content>
@@ -36,15 +34,15 @@
                 <v-spacer></v-spacer>
                 <v-toolbar-items class="hidden-sm-and-down">
                     <v-btn>
-                        <v-icon>mdi-home</v-icon>
+                        <i class="material-icons" style="font-size:24px">account_balance</i>  
                         <router-link to="/ssrnm">SSRNM Main</router-link>
                     </v-btn>
                     <v-btn>
-                        <v-icon>mdi-ship-wheel</v-icon>
+                        <i class="material-icons" style="font-size:20px">directions_boat</i>
                         <router-link to="/">Atlantic Fleet</router-link>
                     </v-btn>
                     <v-btn>
-                        <v-icon>mdi-head-question</v-icon>
+                        <i class="material-icons" style="font-size:22px">help_outline</i>
                         <router-link to="/about">About</router-link>
                     </v-btn>
                 </v-toolbar-items>
@@ -59,7 +57,6 @@
             <v-footer app>
                 <!-- -->
             </v-footer>
-
 </v-app>
 </template>
 
@@ -67,46 +64,48 @@
     /* eslint-disable vue/no-unused-components */
     import Vue from 'vue';
     import SsrnmMain from '@/views/SsrnmMain.vue'; 
+   
 
 export default Vue.extend({
 
   name: 'App',
   components: {
       SsrnmMain,     
-    },
+  },  
     data: () => ({
-        navItems: [{
-            id: 0,
-            link: "landing-page",
-            icon: "mdi-home",
-            isize: "22",
-            title: "SSRNM Main"
+        navItems: [
+            {
+                id: 0,
+                link: "landing-page",
+                icon: "account_balance",
+                isize: "22",
+            title: " - SSRNM Main"
             , header: "ATLANTIC FLEET"
         }, {
             id: 1,
                 link: "",
-                icon: "mdi-ship-wheel",
-                isize: "22",
-            title: "ATLANTIC FLEET"
+                icon: "directions_boat",
+                isize: "20",
+            title: " - ATLANTIC FLEET"
             , header: "ATLANTIC FLEET"
         }, {
             id: 2,
                 link: "trials-table",
-                icon: "mdi-sail-boat",
+                icon: "compare_arrows",
                 isize: "19",
             title: " - TRIAL HISTORY"
             , header: "ATLANTIC FLEET"
         }, {
                 id: 3,
                 link: "asw-table",
-                icon: "mdi-google-analytics",
+                icon: "gps_not_fixed",
                 isize: "19",
                 title: " - ASW OVERVIEW"
                 , header: "ATLANTIC FLEET"
         },{
                 id: 4,
                 link: "non-asw-table",
-                icon: "mdi-google-circles-extended",
+                icon: "invert_colors",
                 isize: "19",
                 title: " - NON ASW OVERVIEW"
                 , header: "NON ATLANTIC FLEET"
@@ -114,42 +113,42 @@ export default Vue.extend({
         }, {
                 id: 5,
                 link: "search-form",
-                icon: "mdi-google-circles",
+                icon: "search",
                 isize: "19",
                 title: " - SEARCH"
                 , header: "SEARCH"
         }, {
                 id: 6,
                 link: "reports-list",
-                icon: "mdi-view-headline",
+                icon: "line_weight",
                 isize: "19",
                 title: " - REPORTS LIST"
                 , header: "REPORTS LIST"
         }, {
                 id: 7,
                 link: "last-15-trials",
-                icon: "mdi-google-lens",
+                icon: "play_for_work",
                 isize: "19",
                 title: " - LAST 15 TRIALS"
                 , header: "LAST 15 TRIALS"
         }, {
                 id: 8,
                 link: "contacts",
-                icon: "mdi-arrow-up-bold-hexagon-outline",
+                icon: "group",
                 isize: "19",
                 title: " - CONTACTS"
                 , header: "CONTACTS"
         }, {
                 id: 9,
                 link: "coming-soon",
-                icon: "mdi-google-play",
+                icon: "watch",
                 isize: "19",
                 title: " - COMING SOON"
                 , header: "COMING SOON"
         }, {
                 id: 10,
                 link: "dod-notice",
-                icon: "mdi-google-hangouts",
+                icon: "gavel",
                 isize: "19",
                 title: " - DOD NOTICE"
                 , header: "DOD NOTICE"
@@ -166,7 +165,7 @@ export default Vue.extend({
         currItem: '',
     }),
     methods: {
-        navItem_onclick(item) {
+        navItem_onclick(item) {           
             this.currItem = item
         },
     }

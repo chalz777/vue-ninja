@@ -55,7 +55,11 @@ const DataAccess = {
         return getGetRequest("RoutedDocument", id);
     },
     getRoutedDocuments: function () {
-        return getGetRequest("RoutedDocument");
+        
+        alert("getRoutedDocuments");
+        return;
+
+        //return getGetRequest("RoutedDocument");
     },
     getRoutedDocumentList: function () {
         return getGetRequest("RoutedDocument/List");

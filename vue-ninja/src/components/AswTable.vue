@@ -1,4 +1,5 @@
 <template>
+  
     <v-card>
         <v-card-title>
             ASW Overview
@@ -10,34 +11,33 @@
                           single-line
                           hide-details />
         </v-card-title>
-
+        
         <v-data-table :headers="headers"
                       :items="itemsDisplay"
                       :search="search"
                       item-key="id"
                       class="elevation-1"
-                      @click:row="row_onClick"
-                      >
+                      @click:row="row_onClick">
 
             <template v-slot:slot:default>
                 <tbody>
                     <tr class="pointer" v-for="item in items" :key="item.id">
-                        <td >{{item.status}} | {{item.rowClass}}</td>
-                        <td >{{ item.hull }}</td>
-                        <td >{{ item.ship}}</td>
-                        <td >{{ item.months}}</td>
-                        <td >{{ item.date }}</td>
-                        <td >{{ item.name }}</td>                        
+                        <td>{{item.status}} | {{item.rowClass}}</td>
+                        <td>{{ item.hull }}</td>
+                        <td>{{ item.ship}}</td>
+                        <td>{{ item.months}}</td>
+                        <td>{{ item.date }}</td>
+                        <td>{{ item.name }}</td>
                     </tr>
                 </tbody>
             </template>
         </v-data-table>
-         <div>
-           
-    </div>
+        <div>
+
+        </div>
     </v-card>
-   
-    
+
+
 </template>
 
 <script lang="ts">
@@ -159,7 +159,11 @@
          
             row_onClick: function (e) {
                 console.log(e, " was clicked");
+                console.log(this.$route.query);
+                (this as any).$vData.getRoutedDocuments();
+                //(this as any).getRoute();
                 (this as any).$vToastify.info("body", "title"); 
+                
             }
         },
         computed: {

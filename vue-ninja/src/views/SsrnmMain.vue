@@ -29,9 +29,9 @@
         <v-row class="text-center">
             <v-col cols="12" class="pa-md-1 my-lg-auto" color="white">
                 <component v-bind:is="component" />
-                
+
                 <v-card>{{parentComponent.link}}</v-card>
-               
+
                 <!--<TrailsTable2 msg="Welcome to Your Vue.js + TypeScript App" />-->
                 <!--<component :is="currentMainComponent" v-bind="currentMainProperties" v-on="currentMainEvents"> </component>-->
             </v-col>
@@ -52,6 +52,7 @@
     import Contacts from '@/components/Contacts.vue';    
     import ComingSoon from '@/components/ComingSoon.vue';
     import DodNotice from '@/components/DodNotice.vue'; 
+      
 
 
     @Component({
@@ -80,6 +81,7 @@
         },
     methods: {
         changeComp(link) {
+          
             //alert("parentmessage has changed: " + link);
             //if ((this as any).component === TrailsTable) {
             if (link == "landing-page") {
